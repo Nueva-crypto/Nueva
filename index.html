@@ -6,9 +6,7 @@
 <title>Nuevavilla | Vacation Home</title>
 
 <style>
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
     margin: 0;
@@ -29,10 +27,6 @@ nav {
     z-index: 1000;
 }
 
-nav h2 {
-    margin: 0;
-}
-
 nav a {
     color: white;
     margin-left: 15px;
@@ -40,38 +34,60 @@ nav a {
     font-weight: bold;
 }
 
-/* HEADER */
+/* HEADER SLIDESHOW */
 header {
-    background: 
-        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-        url('https://via.placeholder.com/1200x600') no-repeat center/cover;
-    color: white;
-    padding: 100px 20px;
+    position: relative;
+    height: 90vh;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    animation: slideShow 20s infinite;
+}
+
+.slide:nth-child(1) { animation-delay: 0s; }
+.slide:nth-child(2) { animation-delay: 5s; }
+.slide:nth-child(3) { animation-delay: 10s; }
+.slide:nth-child(4) { animation-delay: 15s; }
+
+@keyframes slideShow {
+    0% { opacity: 0; }
+    5% { opacity: 1; }
+    25% { opacity: 1; }
+    30% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+.header-content {
+    position: relative;
+    z-index: 2;
     text-align: center;
+    color: white;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-header h1 {
+.header-content h1 {
     font-size: 3em;
-    margin-bottom: 10px;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-}
-
-header p {
-    font-size: 1.2em;
+    text-shadow: 2px 2px 8px black;
 }
 
 .btn {
-    display: inline-block;
     margin-top: 20px;
     padding: 15px 30px;
     background: #ff5a5f;
     color: white;
-    text-decoration: none;
     border-radius: 30px;
-    font-weight: bold;
+    text-decoration: none;
 }
 
-/* SECTIONS */
+/* SECTION */
 .section {
     padding: 40px 20px;
     max-width: 1000px;
@@ -79,12 +95,17 @@ header p {
 }
 
 /* GALLERY */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .gallery img {
-    width: 100%;
-    max-width: 300px;
+    width: 300px;
     margin: 10px;
     border-radius: 10px;
-    transition: transform 0.3s ease;
+    transition: 0.3s;
 }
 
 .gallery img:hover {
@@ -105,67 +126,73 @@ header p {
     border-radius: 10px;
 }
 
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #222;
+/* STICKY BUTTON */
+.sticky-book {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #ff5a5f;
     color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+    text-decoration: none;
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 2em;
-    }
-
-    .features {
-        flex-direction: column;
-    }
-
-    nav {
-        flex-direction: column;
-        align-items: center;
-    }
+    .features { flex-direction: column; }
+    nav { flex-direction: column; align-items: center; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- NAV -->
 <nav>
     <h2>Nuevavilla</h2>
     <div>
         <a href="#about">About</a>
         <a href="#gallery">Gallery</a>
         <a href="#features">Features</a>
-        <a href="#location">Location</a>
+        <a href="#rules">Rules</a>
     </div>
 </nav>
 
-<!-- HEADER -->
+<!-- SLIDESHOW HEADER -->
 <header>
-    <h1>Nuevavilla</h1>
-    <p>Your perfect getaway vacation home</p>
-    <a href="#" class="btn">Book Now</a>
+    <div class="slide" style="background-image:url('images/IMG_0424.JPG')"></div>
+    <div class="slide" style="background-image:url('images/IMG_0345.JPG')"></div>
+    <div class="slide" style="background-image:url('images/IMG_0358.JPG')"></div>
+    <div class="slide" style="background-image:url('images/IMG_0395.JPG')"></div>
+
+    <div class="header-content">
+        <h1>Nuevavilla</h1>
+        <p>Luxury Stay • Relax • Enjoy</p>
+        <a href="#" class="btn">Book Now</a>
+    </div>
 </header>
 
 <!-- ABOUT -->
 <section id="about" class="section">
     <h2>About the Home</h2>
     <p>
-        Relax and enjoy this beautiful home featuring modern amenities, a peaceful environment,
-        and everything you need for the perfect stay.
+        Enjoy a relaxing stay in our fully equipped vacation home.
+        Designed for comfort, privacy, and unforgettable experiences.
     </p>
 </section>
 
 <!-- GALLERY -->
-<section id="gallery" class="section gallery">
+<section id="gallery" class="section">
     <h2>Gallery</h2>
-    <img src="https://via.placeholder.com/300" alt="House photo">
-    <img src="https://via.placeholder.com/300" alt="House photo">
-    <img src="https://via.placeholder.com/300" alt="House photo">
+    <div class="gallery">
+        <img src="images/IMG_0424.JPG">
+        <img src="images/IMG_0345.JPG">
+        <img src="images/IMG_0358.JPG">
+        <img src="images/IMG_0395.JPG">
+        <img src="images/IMG_0313.JPG">
+        <img src="images/IMG_0308.JPG">
+    </div>
 </section>
 
 <!-- FEATURES -->
@@ -173,28 +200,31 @@ footer {
     <h2>Features</h2>
     <div class="features">
         <div class="feature">🏊 Pool</div>
-        <div class="feature">📶 Free WiFi</div>
+        <div class="feature">📶 WiFi</div>
         <div class="feature">🍳 Full Kitchen</div>
-        <div class="feature">🛏️ Comfortable Bedrooms</div>
+        <div class="feature">🛏️ Spacious Bedrooms</div>
     </div>
 </section>
 
-<!-- LOCATION -->
-<section id="location" class="section">
-    <h2>Location</h2>
-    <p>Located in a prime area close to attractions, restaurants, and more.</p>
+<!-- RULES -->
+<section id="rules" class="section">
+    <h2>House Rules</h2>
+    <p>
+        • No smoking indoors<br>
+        • No parties or events<br>
+        • Respect quiet hours<br>
+        • Treat the home with care
+    </p>
 </section>
 
-<!-- CALL TO ACTION -->
+<!-- CTA -->
 <section class="section" style="text-align:center;">
-    <h2>Ready to Book Your Stay?</h2>
+    <h2>Ready for Your Stay?</h2>
     <a href="#" class="btn">Check Availability</a>
 </section>
 
-<!-- FOOTER -->
-<footer>
-    <p>© 2026 Nuevavilla</p>
-</footer>
+<!-- STICKY BUTTON -->
+<a href="#" class="sticky-book">Book Now</a>
 
 </body>
 </html>
