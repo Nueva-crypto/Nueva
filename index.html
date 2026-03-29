@@ -15,7 +15,7 @@ body {
     color: #333;
 }
 
-/* NAVBAR */
+/* NAV */
 nav {
     position: sticky;
     top: 0;
@@ -31,10 +31,9 @@ nav a {
     color: white;
     margin-left: 15px;
     text-decoration: none;
-    font-weight: bold;
 }
 
-/* HEADER SLIDESHOW */
+/* SLIDESHOW */
 header {
     position: relative;
     height: 90vh;
@@ -51,17 +50,17 @@ header {
     animation: slideShow 20s infinite;
 }
 
-.slide:nth-child(1) { animation-delay: 0s; }
-.slide:nth-child(2) { animation-delay: 5s; }
-.slide:nth-child(3) { animation-delay: 10s; }
-.slide:nth-child(4) { animation-delay: 15s; }
+.slide:nth-child(1){animation-delay:0s;}
+.slide:nth-child(2){animation-delay:5s;}
+.slide:nth-child(3){animation-delay:10s;}
+.slide:nth-child(4){animation-delay:15s;}
 
 @keyframes slideShow {
-    0% { opacity: 0; }
-    5% { opacity: 1; }
-    25% { opacity: 1; }
-    30% { opacity: 0; }
-    100% { opacity: 0; }
+    0% {opacity:0;}
+    5% {opacity:1;}
+    25% {opacity:1;}
+    30% {opacity:0;}
+    100% {opacity:0;}
 }
 
 .header-content {
@@ -73,13 +72,7 @@ header {
     transform: translateY(-50%);
 }
 
-.header-content h1 {
-    font-size: 3em;
-    text-shadow: 2px 2px 8px black;
-}
-
 .btn {
-    margin-top: 20px;
     padding: 15px 30px;
     background: #ff5a5f;
     color: white;
@@ -87,10 +80,10 @@ header {
     text-decoration: none;
 }
 
-/* SECTION */
+/* SECTIONS */
 .section {
     padding: 40px 20px;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;
 }
 
@@ -141,7 +134,6 @@ header {
 /* MOBILE */
 @media (max-width: 768px) {
     .features { flex-direction: column; }
-    nav { flex-direction: column; align-items: center; }
 }
 </style>
 </head>
@@ -159,12 +151,12 @@ header {
     </div>
 </nav>
 
-<!-- SLIDESHOW HEADER -->
+<!-- SLIDESHOW (you can swap these anytime) -->
 <header>
-    <div class="slide" style="background-image:url('images/IMG_0424.JPG')"></div>
-    <div class="slide" style="background-image:url('images/IMG_0345.JPG')"></div>
-    <div class="slide" style="background-image:url('images/IMG_0358.JPG')"></div>
-    <div class="slide" style="background-image:url('images/IMG_0395.JPG')"></div>
+    <div class="slide" style="background-image:url('images/IMG_0234.JPG')"></div>
+    <div class="slide" style="background-image:url('images/IMG_0278.JPG')"></div>
+    <div class="slide" style="background-image:url('images/IMG_0281.JPG')"></div>
+    <div class="slide" style="background-image:url('images/IMG_0284.JPG')"></div>
 
     <div class="header-content">
         <h1>Nuevavilla</h1>
@@ -176,22 +168,25 @@ header {
 <!-- ABOUT -->
 <section id="about" class="section">
     <h2>About the Home</h2>
-    <p>
-        Enjoy a relaxing stay in our fully equipped vacation home.
-        Designed for comfort, privacy, and unforgettable experiences.
-    </p>
+    <p>Beautiful vacation home designed for comfort, relaxation, and unforgettable stays.</p>
 </section>
 
-<!-- GALLERY -->
+<!-- GALLERY (ALL IMAGES — you can remove/reorder anytime) -->
 <section id="gallery" class="section">
     <h2>Gallery</h2>
     <div class="gallery">
-        <img src="images/IMG_0424.JPG">
-        <img src="images/IMG_0345.JPG">
-        <img src="images/IMG_0358.JPG">
-        <img src="images/IMG_0395.JPG">
-        <img src="images/IMG_0313.JPG">
-        <img src="images/IMG_0308.JPG">
+
+        <!-- ADD ALL YOUR IMAGES HERE -->
+        <img src="images/IMG_0234.JPG">
+        <img src="images/IMG_0278.JPG">
+        <img src="images/IMG_0281.JPG">
+        <img src="images/IMG_0284.JPG">
+        <img src="images/IMG_0286.JPG">
+
+        <!-- 🔽 COPY THIS LINE AND CHANGE NUMBER FOR ALL YOUR FILES -->
+        <!-- Example -->
+        <!-- <img src="images/IMG_XXXX.JPG"> -->
+
     </div>
 </section>
 
@@ -202,7 +197,7 @@ header {
         <div class="feature">🏊 Pool</div>
         <div class="feature">📶 WiFi</div>
         <div class="feature">🍳 Full Kitchen</div>
-        <div class="feature">🛏️ Spacious Bedrooms</div>
+        <div class="feature">🛏️ Comfortable Bedrooms</div>
     </div>
 </section>
 
@@ -211,9 +206,9 @@ header {
     <h2>House Rules</h2>
     <p>
         • No smoking indoors<br>
-        • No parties or events<br>
-        • Respect quiet hours<br>
-        • Treat the home with care
+        • No parties<br>
+        • Respect neighbors<br>
+        • Keep property clean
     </p>
 </section>
 
